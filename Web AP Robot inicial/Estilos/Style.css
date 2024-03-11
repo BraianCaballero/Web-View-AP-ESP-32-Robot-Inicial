@@ -1,0 +1,315 @@
+body {
+    background-color: #29bfc7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.botonera {
+    width: 70%;
+    left: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.queue {
+    width: 30%;
+    right: auto;
+    display: flex;
+    flex-direction: column
+}
+
+#directionContainer {
+    /*display: grid;
+    grid-template-rows: repeat(10, 8em);*/
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.square {
+    display: flex;
+    width: 8em;
+    height: 8em;
+    border: 1px solid black;
+    margin: 2px;
+    text-align: center;
+    line-height: 2em;
+    background-color: white;
+    border-radius: 30%;
+}
+
+.arrow {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+/*.arrow.up {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid #750505;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.arrow.down {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #750505;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.arrow.left {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 10px solid #750505;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -50%);
+}
+
+.arrow.right {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid #750505;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, -50%);
+}*/
+
+.arrow::before {
+    content: '';
+    border-width: 0 3em 4em 3em;
+    border-color: transparent transparent #750505 transparent;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.arrow.up::before {
+    border-width: 0 3em 4em 3em;
+    border-color: transparent transparent #750505 transparent;
+}
+
+.arrow.down::before {
+    border-width: 4em 3em 0 3em;
+    border-color: #750505 transparent transparent transparent;
+}
+
+.arrow.left::before {
+    border-width: 3em 4em 3em 0;
+    border-color: transparent #750505 transparent transparent;
+}
+
+.arrow.right::before {
+    border-width: 3em 0 3em 4em;
+    border-color: transparent transparent transparent #750505;
+}
+
+.arrow.square-1 { grid-area: 1 / 1; }
+.arrow.square-2 { grid-area: 1 / 2; }
+.arrow.square-3 { grid-area: 1 / 3; }
+.arrow.square-4 { grid-area: 1 / 4; }
+.arrow.square-5 { grid-area: 1 / 5; }
+.arrow.square-6 { grid-area: 1 / 6; }
+.arrow.square-7 { grid-area: 1 / 7; }
+.arrow.square-8 { grid-area: 1 / 8; }
+.arrow.square-9 { grid-area: 1 / 9; }
+.arrow.square-10 { grid-area: 1 / 10; }
+
+.botoneraGrid {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 45em auto 45em;
+    grid-template-rows: repeat(5, 15em);
+    gap: 5px;
+    justify-content: flex-start;
+}
+
+.botoneraGrid > * {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    align-items: center;
+    text-align: center;
+}
+
+.btnCentral {
+    grid-column: 1 / span 3;
+}
+
+.arrowUp {
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 1.1em;
+    margin-top: 0.2em;
+    margin-bottom: -17%;
+    border-left: 3em solid transparent;
+    border-right: 3em solid transparent;
+    border-bottom: 4em solid #750505;
+}
+
+.arrowUp:hover {
+    border-bottom: 4em solid #E61212;
+}
+
+.arrowLeft {
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 50%;
+    top: 1.1em;
+    margin-left: 0.2em;
+    margin-right: -17%;
+    border-top: 3em solid transparent;
+    border-bottom: 3em solid transparent;
+    border-right: 4em solid #750505;
+}
+
+.arrowLeft:hover {
+    border-right: 4em solid #E61212;
+}
+
+.arrowRight {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    top: 1.1em;
+    margin-right: 0.2em;
+    margin-left: -17%;
+    border-top: 3em solid transparent;
+    border-bottom: 3em solid transparent;
+    border-left: 4em solid #750505;
+}
+
+.arrowRight:hover {
+    border-left: 4em solid #E61212;
+}
+
+.arrowDown {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 1em;
+    margin-left: 0.2em;
+    margin-top: -17%;
+    border-left: 3em solid transparent;
+    border-right: 3em solid transparent;
+    border-top: 4em solid #750505;
+}
+
+.arrowDown:hover {
+    border-top: 4em solid #E61212;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.Btn-amarillo {
+    width: 8em;
+    height: 8em;
+    margin: 0 auto;
+    background-color: #FFC300;
+    box-shadow: 5px 5px 5px 5px #5e4903;
+    border: 0.5px solid black;
+    border-radius: 50%;
+}
+
+.Btn-amarillo:hover {
+    background-color: #5e4903;
+    box-shadow: 0 0 0 #5e4903;
+}
+
+.Btn-rojo {
+    width: 8em;
+    height: 8em;
+    margin: 0 auto;
+    background-color: #E61212;
+    box-shadow: 5px 5px 5px 5px #750505;
+    border: 0.5px solid black;
+    border-radius: 50%;
+    position: relative;
+}
+
+.Btn-rojo:hover {
+    background-color: #750505;
+    box-shadow: 0 0 0 #750505;
+}
+
+/*@media screen and (prefers-screen-scheme: dark) {   
+    body {
+        background-color: #022954;
+        color: white;
+    }
+}*/
+
+/*tablet-landscape & monitor*/
+@media screen and (min-width: 768px) and (max-width: 1199px) and (orientation:portrait) {
+    
+}
+
+/*movile-landscape & tablet portrait*/
+@media screen and (max-width: 767px) {
+
+}
+
+/*movile-portrait*/
+@media screen and (max-width: 480px) and (orientation:portrait) {
+    body {
+        display: flex;
+        flex-direction: row;
+        background-color: #022954;
+    }
+
+    .botonera {
+        max-width: 70%;
+        left: auto;
+        display: flex;
+    }
+
+    .queue {
+        max-width: 30%;
+        right: auto;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .botoneraGrid {
+        margin: 3px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .Btn-amarillo {
+        width: 3em;
+        height: 3em;
+        box-shadow: 3px 3px 3px 3px #5e4903;
+    }
+
+    .Btn-rojo{
+        width: 3em;
+        height: 3em;
+        box-shadow: 3px 3px 3px 3px #5e4903;
+    }
+    
+    .arrowUp {
+        border-width: 0 1em 2em 1em;
+        border-color: transparent transparent transparent #750505;
+    }
+
+    .arrowDown {
+        border-width: 2em 1em 0 1em;
+        border-color: #750505 transparent transparent transparent;
+    }
+}
