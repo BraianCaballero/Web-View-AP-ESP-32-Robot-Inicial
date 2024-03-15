@@ -2,37 +2,102 @@ body {
     background-color: #29bfc7;
     margin: 0;
     padding: 0;
+}
+
+header {
+    width: 100%;
+    height: 10ex;
     display: flex;
     flex-direction: row;
+    /*background-color: #00ffa5;*/
+    text-align: center;
+    font-size: 1.8em;
+}
+
+header > .titleHeader {
+    flex: auto;
+}
+
+.mainContent {
+    display: flex;
+}
+
+.ThemeBox {
+    max-width: 10ex;
+    max-height: 10ex;
+    margin-right: 2ex;
+}
+
+.ToggleTheme {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+    display: block;
+    width: 80px;
+    height: 36px;
+    background-color: #0953a1;
+    border-radius: 23px;
+    position: relative;
+}
+
+label:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 1px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    transition: left 0.2s;
+}
+
+input[type="checkbox"]:checked + label {
+    background-color: #29bfc7;
+}
+
+input[type="checkbox"]:checked + label:after {
+    left: 48px;
 }
 
 .botonera {
-    width: 70%;
+    width: 60%;
     left: auto;
-    display: flex;
-    flex-direction: column;
+    margin: auto;
 }
 
 .queue {
-    width: 30%;
+    width: 40%;
     right: auto;
-    display: flex;
-    flex-direction: column
+    margin: auto;
 }
 
 #directionContainer {
-    /*display: grid;
-    grid-template-rows: repeat(10, 8em);*/
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-around;
-    gap: 5px;
+    display: grid;
+    grid-template-rows: repeat(10, 15ex);
+    justify-content: center;
+    gap: 0.3em;
+    margin: auto;
 }
 
 .square {
     display: flex;
-    width: 8em;
-    height: 8em;
+    width: 15ex;
+    height: 15ex;
     border: 1px solid black;
     margin: 2px;
     text-align: center;
@@ -47,45 +112,9 @@ body {
     display: inline-block;
 }
 
-/*.arrow.up {
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 10px solid #750505;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -100%);
-}
-
-.arrow.down {
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 10px solid #750505;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-}
-
-.arrow.left {
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-right: 10px solid #750505;
-    top: 50%;
-    left: 50%;
-    transform: translate(-100%, -50%);
-}
-
-.arrow.right {
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 10px solid #750505;
-    top: 50%;
-    left: 50%;
-    transform: translate(0%, -50%);
-}*/
-
 .arrow::before {
     content: '';
-    border-width: 0 3em 4em 3em;
+    border-width: 0 3ex 4ex 3ex;
     border-color: transparent transparent #750505 transparent;
     width: 0;
     height: 0;
@@ -124,91 +153,93 @@ body {
 .arrow.square-10 { grid-area: 1 / 10; }
 
 .botoneraGrid {
-    margin: 10px;
+    width: 100%;
+    margin: auto;
     display: grid;
-    grid-template-columns: 45em auto 45em;
-    grid-template-rows: repeat(5, 15em);
+    grid-template-columns: repeat(3, 7em);/*45em auto 45em;*/
+    grid-template-rows: repeat(5, 7em);
     gap: 5px;
-    justify-content: flex-start;
+    justify-content: center;
+    font-size: xx-large;
 }
 
 .botoneraGrid > * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 16px;
-    align-items: center;
+    font-size: large;
     text-align: center;
+    /*border: 1px solid black;*/
+    display: inline;
 }
 
 .btnCentral {
     grid-column: 1 / span 3;
 }
 
+#mensaje {
+    font-family: 'Franklin Gothic Medium';
+    font-size: 1.66em;
+    text-align: center;
+    justify-content: center;
+}
+
 .arrowUp {
-    width: 0;
-    height: 0;
     position: absolute;
     bottom: 50%;
-    left: 1.1em;
-    margin-top: 0.2em;
+    left: 2.4ex;
+    margin-top: 0.2ex;
     margin-bottom: -17%;
-    border-left: 3em solid transparent;
-    border-right: 3em solid transparent;
-    border-bottom: 4em solid #750505;
+    border-left: 5ex solid transparent;
+    border-right: 5ex solid transparent;
+    border-bottom: 7ex solid #750505;
 }
 
 .arrowUp:hover {
-    border-bottom: 4em solid #E61212;
+    border-bottom: 7ex solid #E61212;
 }
 
 .arrowLeft {
-    width: 0;
-    height: 0;
     position: absolute;
     right: 50%;
-    top: 1.1em;
-    margin-left: 0.2em;
+    top: 2.4ex;
+    margin-left: 0.2ex;
     margin-right: -17%;
-    border-top: 3em solid transparent;
-    border-bottom: 3em solid transparent;
-    border-right: 4em solid #750505;
+    border-top: 5ex solid transparent;
+    border-bottom: 5ex solid transparent;
+    border-right: 7ex solid #750505;
 }
 
 .arrowLeft:hover {
-    border-right: 4em solid #E61212;
+    border-right: 7ex solid #E61212;
 }
 
 .arrowRight {
-    width: 0;
-    height: 0;
     position: absolute;
     left: 50%;
-    top: 1.1em;
-    margin-right: 0.2em;
+    top: 2.4ex;
+    margin-right: 0.2ex;
     margin-left: -17%;
-    border-top: 3em solid transparent;
-    border-bottom: 3em solid transparent;
-    border-left: 4em solid #750505;
+    border-top: 5ex solid transparent;
+    border-bottom: 5ex solid transparent;
+    border-left: 7ex solid #750505;
 }
 
 .arrowRight:hover {
-    border-left: 4em solid #E61212;
+    border-left: 7ex solid #E61212;
 }
 
 .arrowDown {
-    width: 0;
-    height: 0;
     position: absolute;
     top: 50%;
-    left: 1em;
-    margin-left: 0.2em;
+    left: 2.4ex;
+    margin-left: 0.2ex;
     margin-top: -17%;
-    border-left: 3em solid transparent;
-    border-right: 3em solid transparent;
-    border-top: 4em solid #750505;
+    border-left: 5ex solid transparent;
+    border-right: 5ex solid transparent;
+    border-top: 7ex solid #750505;
 }
 
 .arrowDown:hover {
-    border-top: 4em solid #E61212;
+    border-top: 7ex solid #E61212;
 }
 
 .btn {
@@ -216,11 +247,11 @@ body {
 }
 
 .Btn-amarillo {
-    width: 8em;
-    height: 8em;
+    width: 15ex;
+    height: 15ex;
     margin: 0 auto;
     background-color: #FFC300;
-    box-shadow: 5px 5px 5px 5px #5e4903;
+    box-shadow: 3px 3px 0 3px #5e4903;
     border: 0.5px solid black;
     border-radius: 50%;
 }
@@ -231,11 +262,11 @@ body {
 }
 
 .Btn-rojo {
-    width: 8em;
-    height: 8em;
-    margin: 0 auto;
+    width: 15ex;
+    height: 15ex;
+    margin: auto;
     background-color: #E61212;
-    box-shadow: 5px 5px 5px 5px #750505;
+    box-shadow: 3px 3px 0 3px #750505;
     border: 0.5px solid black;
     border-radius: 50%;
     position: relative;
@@ -246,70 +277,371 @@ body {
     box-shadow: 0 0 0 #750505;
 }
 
-/*@media screen and (prefers-screen-scheme: dark) {   
-    body {
-        background-color: #022954;
-        color: white;
-    }
+/*tablet-landscape & monitor
+@media screen and (min-width: 768px) and (max-width: 2150px) and (orientation:portrait) {
+
 }*/
 
-/*tablet-landscape & monitor*/
-@media screen and (min-width: 768px) and (max-width: 1199px) and (orientation:portrait) {
-    
-}
+/*tablet portrait*/
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    header {
+        max-height: 10ex;
+        margin-bottom: 2ex;
+        font-size: large;
+    }
 
-/*movile-landscape & tablet portrait*/
-@media screen and (max-width: 767px) {
+    h2 {
+        font-size: medium;
+    }
 
-}
+    label {
+        width: 50px;
+        height: 26px;
+        border-radius: 13px;
+    }
 
-/*movile-portrait*/
-@media screen and (max-width: 480px) and (orientation:portrait) {
-    body {
+    label:after {
+        top: 1px;
+        left: 2px;
+        width: 24px;
+        height: 24px;
+    }
+
+    input[type="checkbox"]:checked + label:after {
+        left: 24px;
+    }
+
+    .mainContent {
+        width: 100%;
         display: flex;
-        flex-direction: row;
-        background-color: #022954;
     }
 
     .botonera {
         max-width: 70%;
-        left: auto;
-        display: flex;
     }
 
     .queue {
         max-width: 30%;
-        right: auto;
-        display: flex;
-        flex-flow: row wrap;
     }
 
     .botoneraGrid {
-        margin: 3px;
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
+        justify-content: center;
+        font-size: medium;
+    }
+
+    .botoneraGrid > * {
+        font-size: medium;
+    }
+
+    #directionContainer {
+        grid-template-rows: repeat(10, 8ex);
+    }
+
+    .square {
+        width: 8ex;
+        height: 8ex;
     }
 
     .Btn-amarillo {
-        width: 3em;
-        height: 3em;
-        box-shadow: 3px 3px 3px 3px #5e4903;
+        width: 8ex;
+        height: 8ex;
+        box-shadow: 2px 2px 0 2px #5e4903;
     }
 
-    .Btn-rojo{
-        width: 3em;
-        height: 3em;
-        box-shadow: 3px 3px 3px 3px #5e4903;
+    .Btn-rojo {
+        width: 8ex;
+        height: 8ex;
+        box-shadow: 2px 2px 0 2px #750505;
+    }
+
+    .arrowUp {
+        left: 1.1ex;
+        border-left: 3ex solid transparent;
+        border-right: 3ex solid transparent;
+        border-bottom: 4ex solid #750505;
     }
     
-    .arrowUp {
-        border-width: 0 1em 2em 1em;
-        border-color: transparent transparent transparent #750505;
+    .arrowUp:hover {
+        border-bottom: 4ex solid #E61212;
+    }
+    
+    .arrowLeft {
+        top: 1.1ex;
+        border-top: 3ex solid transparent;
+        border-bottom: 3ex solid transparent;
+        border-right: 4ex solid #750505;
+    }
+    
+    .arrowLeft:hover {
+        border-right: 4ex solid #E61212;
+    }
+    
+    .arrowRight {
+        top: 1.1ex;
+        border-top: 3ex solid transparent;
+        border-bottom: 3ex solid transparent;
+        border-left: 4ex solid #750505;
+    }
+    
+    .arrowRight:hover {
+        border-left: 4ex solid #E61212;
+    }
+    
+    .arrowDown {
+        left: 1ex;
+        border-left: 3ex solid transparent;
+        border-right: 3ex solid transparent;
+        border-top: 4ex solid #750505;
+    }
+    
+    .arrowDown:hover {
+        border-top: 4ex solid #E61212;
     }
 
+    #mensaje {
+        font-size: medium;
+    }
+}
+
+/*movile-portrait*/
+@media screen and (min-width: 389px) and (max-width: 479px) and (orientation:portrait) {
+    header {
+        max-height: 10ex;
+        margin-bottom: 1ex;
+        font-size: small;
+    }
+
+    h2 {
+        font-size: smaller;
+    }
+
+    label {
+        width: 50px;
+        height: 26px;
+        border-radius: 13px;
+    }
+
+    label:after {
+        top: 1px;
+        left: 2px;
+        width: 24px;
+        height: 24px;
+    }
+
+    input[type="checkbox"]:checked + label:after {
+        left: 25px;
+    }
+
+    .botonera {
+        max-width: 60%;
+        max-height: 480px;
+        margin: auto;
+    }
+
+    .queue {
+        max-width: 40%;
+        max-height: 480px;
+        flex: auto;
+        margin: auto;
+    }
+
+    .botoneraGrid {
+        justify-content: left;
+        font-size: small;
+    }
+
+    .botoneraGrid > * {
+        font-size: small;
+    }
+
+    #directionContainer {
+        justify-content: right;
+        grid-template-rows: repeat(10, 8ex);
+        gap: 0.5ex;
+    }
+
+    .square {
+        width: 8ex;
+        height: 8ex;
+    }
+
+    .Btn-amarillo {
+        width: 8ex;
+        height: 8ex;
+        box-shadow: 1.5px 1.5px 0 1.5px #5e4903;
+    }
+
+    .Btn-rojo {
+        width: 8ex;
+        height: 8ex;
+        box-shadow: 1.5px 1.5px 0 1.5px #750505;
+    }
+
+    .arrowUp {
+        left: 1.1ex;
+        border-left: 3ex solid transparent;
+        border-right: 3ex solid transparent;
+        border-bottom: 4ex solid #750505;
+    }
+    
+    .arrowUp:hover {
+        border-bottom: 4ex solid #E61212;
+    }
+    
+    .arrowLeft {
+        top: 1.1ex;
+        border-top: 3ex solid transparent;
+        border-bottom: 3ex solid transparent;
+        border-right: 4ex solid #750505;
+    }
+    
+    .arrowLeft:hover {
+        border-right: 4ex solid #E61212;
+    }
+    
+    .arrowRight {
+        top: 1.1ex;
+        border-top: 3ex solid transparent;
+        border-bottom: 3ex solid transparent;
+        border-left: 4ex solid #750505;
+    }
+    
+    .arrowRight:hover {
+        border-left: 4ex solid #E61212;
+    }
+    
     .arrowDown {
-        border-width: 2em 1em 0 1em;
-        border-color: #750505 transparent transparent transparent;
+        left: 1ex;
+        border-left: 3ex solid transparent;
+        border-right: 3ex solid transparent;
+        border-top: 4ex solid #750505;
+    }
+    
+    .arrowDown:hover {
+        border-top: 4ex solid #E61212;
+    }
+
+    #mensaje {
+        font-size: small;
+    }
+}
+
+@media screen and (min-width: 281px) and (max-width: 388px) and (orientation:portrait) {
+    header {
+        max-height: 10ex;
+        margin-bottom: 1ex;
+        font-size: x-small;
+    }
+
+    h2 {
+        font-size: x-small;
+    }
+
+    label {
+        width: 50px;
+        height: 26px;
+        border-radius: 13px;
+    }
+
+    label:after {
+        top: 1px;
+        left: 2px;
+        width: 24px;
+        height: 24px;
+    }
+
+    input[type="checkbox"]:checked + label:after {
+        left: 25px;
+    }
+
+    .botonera {
+        max-width: 60%;
+        max-height: 560px;
+    }
+
+    .queue {
+        max-width: 40%;
+        max-height: 560px;
+        flex: auto;
+    }
+
+    .botoneraGrid {
+        justify-content: left;
+        font-size: small;
+    }
+
+    .botoneraGrid > * {
+        font-size: small;
+    }
+
+    #directionContainer {
+        justify-content: right;
+        grid-template-rows: repeat(10, 8ex);
+        gap: 0.5ex;
+    }
+
+    .square {
+        width: 8ex;
+        height: 8ex;
+    }
+
+    .Btn-amarillo {
+        width: 8ex;
+        height: 8ex;
+        box-shadow: 1.5px 1.5px 0 1.5px #5e4903;
+    }
+
+    .Btn-rojo {
+        width: 8ex;
+        height: 8ex;
+        box-shadow: 1.5px 1.5px 0 1.5px #750505;
+    }
+
+    .arrowUp {
+        left: 1.1ex;
+        border-left: 3ex solid transparent;
+        border-right: 3ex solid transparent;
+        border-bottom: 4ex solid #750505;
+    }
+    
+    .arrowUp:hover {
+        border-bottom: 4ex solid #E61212;
+    }
+    
+    .arrowLeft {
+        top: 1.1ex;
+        border-top: 3ex solid transparent;
+        border-bottom: 3ex solid transparent;
+        border-right: 4ex solid #750505;
+    }
+    
+    .arrowLeft:hover {
+        border-right: 4ex solid #E61212;
+    }
+    
+    .arrowRight {
+        top: 1.1ex;
+        border-top: 3ex solid transparent;
+        border-bottom: 3ex solid transparent;
+        border-left: 4ex solid #750505;
+    }
+    
+    .arrowRight:hover {
+        border-left: 4ex solid #E61212;
+    }
+    
+    .arrowDown {
+        left: 1ex;
+        border-left: 3ex solid transparent;
+        border-right: 3ex solid transparent;
+        border-top: 4ex solid #750505;
+    }
+    
+    .arrowDown:hover {
+        border-top: 4ex solid #E61212;
+    }
+
+    #mensaje {
+        font-size: small;
     }
 }

@@ -9,79 +9,90 @@
 </head>
 
 <body>
-    <div class="botonera">
-        <div class="botoneraGrid">
-            <div class="btnCentral">
-                <h2>INICIO</h2>
-                <button class="Btn-amarillo" id="inicio" onclick="inicio()">
-                    <a rel="Iniciar" class="btn"></a>
-                </button>
-            </div>
-
-            <div class="btnCentral">
-                <h2>AVANZAR</h2>
-                <button class="Btn-rojo" id="btnAvanzar" onclick="addDirection('Up')">
-                    <a rel="Iniciar" class="btn">
-                        <div class="arrowUp"></div>
-                    </a>
-                </button>
-            </div>
-
-            <div class="left">
-                <h2>IZQUIERDA</h2>
-                <button class="Btn-rojo" id="btnIzquierda" onclick="addDirection('Left')">
-                    <a rel="Iniciar" class="btn">
-                        <div class="arrowLeft"></div>
-                    </a>
-                </button>
-            </div>
-
-            <div class="center">
-                <div id="mensaje"><h1></h1></div>
-            </div>
-
-            <div class="right">
-                <h2>DERECHA</h2>
-                <button class="Btn-rojo" id="btnDerecha" onclick="addDirection('Right')">
-                    <a rel="Iniciar" class="btn">
-                        <div class="arrowRight"></div>
-                    </a>
-                </button>
-            </div>
-
-            <div class="btnCentral">
-                <h2>RETROCEDER</h2>
-                <button class="Btn-rojo" id="btnAtras" onclick="addDirection('Down')">
-                    <a rel="Iniciar" class="btn">
-                        <div class="arrowDown"></div>
-                    </a>
-                </button>
-            </div>
-
-            <div class="btnCentral">
-                <h2>¡VAMOS!</h2>
-                <button class="Btn-amarillo" id="ejecutar" onclick="go()">
-                    <a rel="Iniciar" class="btn"></a>
-                </button>
+    <header>
+        <h1 class="titleHeader">Robot Inicial 00XX</h1>
+        <div class="ThemeBox">
+            <br>
+            <div class="ToggleTheme">
+                <input type="checkbox" id="theme-toggle-btn">
+                <label for="theme-toggle-btn"></label>
             </div>
         </div>
+    </header>
+    <div class="mainContent">
+        <div class="botonera">
+            <div class="botoneraGrid">
+                <div class="btnCentral">
+                    <h2>INICIO</h2>
+                    <button class="Btn-amarillo" id="inicio" onclick="inicio()">
+                        <a rel="Iniciar" class="btn"></a>
+                    </button>
+                </div>
+
+                <div class="btnCentral">
+                    <h2>ADELANTE</h2>
+                    <button class="Btn-rojo" id="btnAvanzar" onclick="addDirection('Up')">
+                        <a rel="Iniciar" class="btn">
+                            <div class="arrowUp"></div>
+                        </a>
+                    </button>
+                </div>
+
+                <div class="left">
+                    <h2>IZQUIERDA</h2>
+                    <button class="Btn-rojo" id="btnIzquierda" onclick="addDirection('Left')">
+                        <a rel="Iniciar" class="btn">
+                            <div class="arrowLeft"></div>
+                        </a>
+                    </button>
+                </div>
+
+                <div class="center">
+                    <div id="mensaje"><h1></h1></div>
+                </div>
+
+                <div class="right">
+                    <h2>DERECHA</h2>
+                    <button class="Btn-rojo" id="btnDerecha" onclick="addDirection('Right')">
+                        <a rel="Iniciar" class="btn">
+                            <div class="arrowRight"></div>
+                        </a>
+                    </button>
+                </div>
+
+                <div class="btnCentral">
+                    <h2>ATRAS</h2>
+                    <button class="Btn-rojo" id="btnAtras" onclick="addDirection('Down')">
+                        <a rel="Iniciar" class="btn">
+                            <div class="arrowDown"></div>
+                        </a>
+                    </button>
+                </div>
+
+                <div class="btnCentral">
+                    <h2>¡VAMOS!</h2>
+                    <button class="Btn-amarillo" id="ejecutar" onclick="go()">
+                        <a rel="Iniciar" class="btn"></a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <aside class="queue">
+            <div id="directionContainer">
+                <div class="square" id="cuadrado"></div>
+                <div class="square" id="cuadrado"></div>
+                <div class="square" id="cuadrado"></div>
+                <div class="square" id="cuadrado"></div>
+                <div class="square" id="cuadrado"></div>
+                <div class="square" id="cuadrado"></div>
+                <div class="square" id="cuadrado"></div>
+                <div class="square" id="cuadrado"></div>
+                <div class="square" id="cuadrado"></div>
+                <div class="square" id="cuadrado"></div>
+            </div>
+        </aside>
     </div>
-
-    <aside class="queue">
-        <div id="directionContainer">
-            <div class="square" id="cuadrado"></div>
-            <div class="square" id="cuadrado"></div>
-            <div class="square" id="cuadrado"></div>
-            <div class="square" id="cuadrado"></div>
-            <div class="square" id="cuadrado"></div>
-            <div class="square" id="cuadrado"></div>
-            <div class="square" id="cuadrado"></div>
-            <div class="square" id="cuadrado"></div>
-            <div class="square" id="cuadrado"></div>
-            <div class="square" id="cuadrado"></div>
-        </div>
-    </aside>
-
     <script src="/JS/Funciones.js"></script>
 </body>
 

@@ -1,13 +1,17 @@
 var directions = [];
 var maxOrdenes = 10;
-var cuadradoActual = 1;
-Bool = document.getElementById("inicio");
-document.getElementById("mensaje").innerHTML = "Para recibir órdenes primero debes presionar el boton de inicio";
+var cuadradoActual = 0;
+var start = new Boolean;
+start = document.getElementById("inicio");
+const toggleBtn = document.getElementById('theme-toggle-btn');
+const body = document.body;
+const header = document.header;
+document.getElementById("mensaje").innerHTML = "Presionar el boton de inicio";
 
 function inicio() {
     clearSquares();
     directions = [];
-    cuadradoActual = 1;
+    cuadradoActual = 0;
     document.getElementById("mensaje").innerHTML = "";
 }
 
@@ -44,14 +48,30 @@ function clearSquares() {
 function go() {
     document.getElementById("mensaje").innerHTML = "¡Allá voy!";
     if (directions.length === 0) {
-        document.getElementById("mensaje").innerHTML = "Para recibir órdenes primero debes presionar el boton de inicio";
+        document.getElementById("mensaje").innerHTML = "Presionar el boton de inicio";
         return;
     }
 
+    /*do {
+        document.getElementById("btnAvanzar").disabled = true;
+        document.getElementById("btnIzquierda").disabled = true;
+        document.getElementById("btnDerecha").disabled = true;
+        document.getElementById("btnAtras").disabled = true;
+    } while (!start);
     if (!"inicio") {
         document.getElementById("btnAvanzar").disabled = true;
         document.getElementById("btnIzquierda").disabled = true;
         document.getElementById("btnDerecha").disabled = true;
         document.getElementById("btnAtras").disabled = true;
-    }
+    }*/
 }
+
+toggleBtn.addEventListener('change', function() {
+    if (this.checked) {
+        body.style.backgroundColor = '#0953a1';
+        body.style.color = 'white';
+    } else {
+        body.style.backgroundColor = '#29bfc7';
+        body.style.color = 'black';
+    }
+});
