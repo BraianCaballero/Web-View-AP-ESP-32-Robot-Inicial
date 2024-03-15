@@ -32,8 +32,7 @@ function showDirection(direction) {
     if (index < maxOrdenes) {
         var arrow = document.createElement("span");
         arrow.className = "arrow" + direction;
-        //squares[index].appendChild(arrow);
-        squares[index].innerHTML = '<span class="arrow ' + direction + '"></span>';
+        squares[index].innerHTML ='<span class="arrow ' + direction + '"></span>';
     }
 }
 

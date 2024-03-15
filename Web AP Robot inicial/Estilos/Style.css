@@ -121,22 +121,22 @@ input[type="checkbox"]:checked + label:after {
     border-style: solid;
 }
 
-.arrow.up::before {
+.arrow.Up::before {
     border-width: 0 3em 4em 3em;
     border-color: transparent transparent #750505 transparent;
 }
 
-.arrow.down::before {
+.arrow.Down::before {
     border-width: 4em 3em 0 3em;
     border-color: #750505 transparent transparent transparent;
 }
 
-.arrow.left::before {
+.arrow.Left::before {
     border-width: 3em 4em 3em 0;
     border-color: transparent #750505 transparent transparent;
 }
 
-.arrow.right::before {
+.arrow.Right::before {
     border-width: 3em 0 3em 4em;
     border-color: transparent transparent transparent #750505;
 }
