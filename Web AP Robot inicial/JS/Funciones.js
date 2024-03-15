@@ -1,6 +1,6 @@
 var directions = [];
 var maxOrdenes = 10;
-var cuadradoActual = 0;
+var cuadradoActual = 1;
 var start = new Boolean;
 start = document.getElementById("inicio");
 const toggleBtn = document.getElementById('theme-toggle-btn');
@@ -11,7 +11,7 @@ document.getElementById("mensaje").innerHTML = "Presionar el boton de inicio";
 function inicio() {
     clearSquares();
     directions = [];
-    cuadradoActual = 0;
+    cuadradoActual = 1;
     document.getElementById("mensaje").innerHTML = "";
 }
 
