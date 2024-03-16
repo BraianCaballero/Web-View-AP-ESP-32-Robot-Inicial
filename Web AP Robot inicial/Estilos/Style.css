@@ -137,7 +137,6 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .arrow.Right::before {
-    top: -50px;
     border-width: 3em 0 3em 4em;
     border-color: transparent transparent transparent #750505;
 }
