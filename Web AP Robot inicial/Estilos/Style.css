@@ -92,6 +92,7 @@ input[type="checkbox"]:checked + label:after {
     justify-content: center;
     gap: 0.3em;
     margin: auto;
+    font-size: medium;
 }
 
 .square {
@@ -160,12 +161,12 @@ input[type="checkbox"]:checked + label:after {
     grid-template-rows: repeat(5, 7em);
     gap: 5px;
     justify-content: center;
-    font-size: xx-large;
+    font-size: x-large;
 }
 
 .botoneraGrid > * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: large;
+    font-size: medium;
     text-align: center;
     /*border: 1px solid black;*/
     display: inline;
