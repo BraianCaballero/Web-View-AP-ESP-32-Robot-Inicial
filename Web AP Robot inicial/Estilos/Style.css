@@ -49,7 +49,7 @@ label {
     display: block;
     width: 80px;
     height: 36px;
-    background-color: #0953a1;
+    background-color: #252850;
     border-radius: 23px;
     position: relative;
 }
@@ -67,7 +67,7 @@ label:after {
 }
 
 input[type="checkbox"]:checked + label {
-    background-color: #29bfc7;
+    background-color: #00aae4; /*#29bfc7*/
 }
 
 input[type="checkbox"]:checked + label:after {
@@ -121,22 +121,22 @@ input[type="checkbox"]:checked + label:after {
     border-style: solid;
 }
 
-.arrow.Up::before {
+.arrow.Adelante::before {
     border-width: 0 3em 4em 3em;
     border-color: transparent transparent #750505 transparent;
 }
 
-.arrow.Down::before {
+.arrow.Atras::before {
     border-width: 4em 3em 0 3em;
     border-color: #750505 transparent transparent transparent;
 }
 
-.arrow.Left::before {
+.arrow.Izquierda::before {
     border-width: 3em 4em 3em 0;
     border-color: transparent #750505 transparent transparent;
 }
 
-.arrow.Right::before {
+.arrow.Derecha::before {
     border-width: 3em 0 3em 4em;
     border-color: transparent transparent transparent #750505;
 }
@@ -175,11 +175,19 @@ input[type="checkbox"]:checked + label:after {
     grid-column: 1 / span 3;
 }
 
+.center {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
 #mensaje {
+    display: flex;
+    text-align: center;
+    align-items: center;
     font-family: 'Franklin Gothic Medium';
     font-size: 1.66em;
-    text-align: center;
-    justify-content: center;
 }
 
 .arrowUp {
