@@ -1,7 +1,7 @@
 var directions = [];
 var maxOrdenes = 10;
 var cuadradoActual = 1;
-var start = new Boolean;
+var start = new Boolean (false);
 start = document.getElementById("inicio");
 const toggleBtn = document.getElementById('theme-toggle-btn');
 const body = document.body;
@@ -62,7 +62,7 @@ function standBy() {
 
 /*esta función se ejecuta a partir de presionar el boton ¡Vamos!*/
 function go() {
-    if (start == false  || directions.length === 0) {
+    if (start == false  || directions.length == 0) {
         document.getElementById("mensaje").innerHTML = "Presionar el boton de inicio";
         return;
     }
