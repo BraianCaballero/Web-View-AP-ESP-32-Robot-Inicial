@@ -9,9 +9,9 @@ header {
     height: 10ex;
     display: flex;
     flex-direction: row;
-    /*background-color: #00ffa5;*/
     text-align: center;
     font-size: 1.8em;
+    background-color: #00ffa5;
 }
 
 header > .titleHeader {
@@ -23,19 +23,16 @@ header > .titleHeader {
 }
 
 .ThemeBox {
-    max-width: 10ex;
-    max-height: 10ex;
-    margin-right: 2ex;
+    display: flex;
+    align-items: center;
 }
 
 .ToggleTheme {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    margin: 2ex;
 }
 
 .theme-toggle {
-    position: absolute;
+    margin: auto;
     top: 10px;
     right: 10px;
 }
@@ -49,7 +46,7 @@ label {
     display: block;
     width: 80px;
     height: 36px;
-    background-color: #252850;
+    background-color: #76766d;
     border-radius: 23px;
     position: relative;
 }
@@ -156,7 +153,7 @@ input[type="checkbox"]:checked + label:after {
     width: 100%;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(3, 7em);/*45em auto 45em;*/
+    grid-template-columns: repeat(3, 7em); /*45em auto 45em;*/
     grid-template-rows: repeat(5, 7em);
     gap: 5px;
     justify-content: center;
@@ -177,17 +174,13 @@ input[type="checkbox"]:checked + label:after {
 
 .center {
     display: flex;
-    text-align: center;
     align-items: center;
-    border: 1px solid black;
 }
 
 #mensaje {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    font-family: 'Franklin Gothic Medium';
-    font-size: 1.66em;
+    margin: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.6rem;
 }
 
 .arrowUp {
@@ -344,6 +337,26 @@ input[type="checkbox"]:checked + label:after {
     #directionContainer {
         grid-template-rows: repeat(10, 8ex);
     }
+    
+    .arrow.Adelante::before {
+        border-width: 0 1.5em 2em 1.5em;
+        border-color: transparent transparent #750505 transparent;
+    }
+    
+    .arrow.Atras::before {
+        border-width: 2em 1.5em 0 1.5em;
+        border-color: #750505 transparent transparent transparent;
+    }
+    
+    .arrow.Izquierda::before {
+        border-width: 1.5em 2em 1.5em 0;
+        border-color: transparent #750505 transparent transparent;
+    }
+    
+    .arrow.Derecha::before {
+        border-width: 1.5em 0 1.5em 2em;
+        border-color: transparent transparent transparent #750505;
+    }
 
     .square {
         width: 8ex;
@@ -414,6 +427,7 @@ input[type="checkbox"]:checked + label:after {
 /*movile-portrait*/
 @media screen and (min-width: 389px) and (max-width: 479px) and (orientation:portrait) {
     header {
+        width: 100%;
         max-height: 10ex;
         margin-bottom: 1ex;
         font-size: small;
@@ -454,6 +468,7 @@ input[type="checkbox"]:checked + label:after {
     }
 
     .botoneraGrid {
+        width: 100%;
         justify-content: left;
         font-size: small;
     }
@@ -463,9 +478,30 @@ input[type="checkbox"]:checked + label:after {
     }
 
     #directionContainer {
+        width: 100%;
         justify-content: right;
         grid-template-rows: repeat(10, 8ex);
         gap: 0.5ex;
+    }
+
+    .arrow.Adelante::before {
+        border-width: 0 1.5em 2em 1.5em;
+        border-color: transparent transparent #750505 transparent;
+    }
+    
+    .arrow.Atras::before {
+        border-width: 2em 1.5em 0 1.5em;
+        border-color: #750505 transparent transparent transparent;
+    }
+    
+    .arrow.Izquierda::before {
+        border-width: 1.5em 2em 1.5em 0;
+        border-color: transparent #750505 transparent transparent;
+    }
+    
+    .arrow.Derecha::before {
+        border-width: 1.5em 0 1.5em 2em;
+        border-color: transparent transparent transparent #750505;
     }
 
     .square {
@@ -586,6 +622,26 @@ input[type="checkbox"]:checked + label:after {
         justify-content: right;
         grid-template-rows: repeat(10, 8ex);
         gap: 0.5ex;
+    }
+    
+    .arrow.Adelante::before {
+        border-width: 0 1.5em 2em 1.5em;
+        border-color: transparent transparent #750505 transparent;
+    }
+    
+    .arrow.Atras::before {
+        border-width: 2em 1.5em 0 1.5em;
+        border-color: #750505 transparent transparent transparent;
+    }
+    
+    .arrow.Izquierda::before {
+        border-width: 1.5em 2em 1.5em 0;
+        border-color: transparent #750505 transparent transparent;
+    }
+    
+    .arrow.Derecha::before {
+        border-width: 1.5em 0 1.5em 2em;
+        border-color: transparent transparent transparent #750505;
     }
 
     .square {
