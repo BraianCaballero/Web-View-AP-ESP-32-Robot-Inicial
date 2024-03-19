@@ -1,13 +1,17 @@
 var directions = [];
 var maxOrdenes = 10;
 var cuadradoActual = 1;
-var start = new Boolean (false);
-start = document.getElementById("inicio");
+let start = new Boolean;
+start = document.querySelector("inicio");
 const toggleBtn = document.getElementById('theme-toggle-btn');
 const body = document.body;
 const label = document.querySelector('label');
 const header = document.querySelector('header');
-document.getElementById("mensaje").innerHTML = "Presionar el boton de inicio";
+
+
+start = false;
+document.getElementById("mensaje").innerHTML = "Para comenzar hay que presionar el boton de inicio";
+//habilitarBotonera(false);
 
 //se comienza a ejecutar esta función a partir de presionar el boton de inicio
 function inicio() {
@@ -15,8 +19,8 @@ function inicio() {
     clearSquares();
     directions = [];
     cuadradoActual = 1;
-    document.getElementById("mensaje").innerHTML = "";
-    habilitarBotonera(start);
+    document.getElementById("mensaje").innerHTML = "Preparado para recibir órdenes";
+    habilitarBotonera(true);
 }
 
 /*esta función es la encargada de leer las direcciones escritas en el html y sumarlas 
@@ -48,27 +52,23 @@ function showDirection(direction) {
 //esta función limpia los cuadrados de la cola de órdenes
 function clearSquares() {
     var squares = document.getElementsByClassName("square");
-
     for (var i=0; i < squares.length; i++) {
         squares[i].innerHTML = "";
     }
 }
 
-function standBy() {
-    if (!inicio()) {
+/*esta función se ejecuta a partir de presionar el boton ¡Vamos!*/
+function go() {   
+    if (directions.length === 0 || start === false) {
+        start = false;
+        document.getElementById("mensaje").innerHTML = "Presionar el botón de inicio";
         habilitarBotonera(false);
     }
-}
-
-/*esta función se ejecuta a partir de presionar el boton ¡Vamos!*/
-function go() {
-    if (start == false  || directions.length == 0) {
-        document.getElementById("mensaje").innerHTML = "Presionar el boton de inicio";
-        return;
-    }
-    start = false;
-    document.getElementById("mensaje").innerHTML = "¡Allá voy!";
-    habilitarBotonera(start);
+    else if (start === true && (directions.length >=1 && directions.length <= 10)) { 
+        start = false;
+        document.getElementById("mensaje").innerHTML = "¡Allá voy!";
+        habilitarBotonera(false);
+    }  
 }
 
 //esta función habilita o deshabilita la botonera dependiendo de su condición actual
