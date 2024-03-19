@@ -10,7 +10,7 @@ const header = document.querySelector('header');
 
 start = false;
 document.getElementById("mensaje").innerHTML = "Para comenzar hay que presionar el boton de inicio";
-//habilitarBotonera(false);
+habilitarBotonera(false);
 
 //se comienza a ejecutar esta función a partir de presionar el boton de inicio
 function inicio() {
