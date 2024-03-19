@@ -8,7 +8,6 @@ const body = document.body;
 const label = document.querySelector('label');
 const header = document.querySelector('header');
 
-
 start = false;
 document.getElementById("mensaje").innerHTML = "Para comenzar hay que presionar el boton de inicio";
 //habilitarBotonera(false);
