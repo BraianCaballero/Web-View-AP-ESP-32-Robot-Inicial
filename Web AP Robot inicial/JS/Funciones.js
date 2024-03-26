@@ -7,6 +7,7 @@ const toggleBtn = document.getElementById('theme-toggle-btn');
 const body = document.body;
 const label = document.querySelector('label');
 const header = document.querySelector('header');
+var boton = document.querySelector('button').value;
 
 start = false;
 document.getElementById("mensaje").innerHTML = "Para comenzar hay que presionar el boton de inicio";
@@ -20,15 +21,18 @@ function inicio() {
     cuadradoActual = 1;
     document.getElementById("mensaje").innerHTML = "Preparado para recibir órdenes";
     habilitarBotonera(true);
+    consultaGET("inicio"); //este evento lo que hace es consultar a url x un evento
 }
 
 /*esta función es la encargada de leer las direcciones escritas en el html y sumarlas 
 hasta llegar a su máximo o su ejecución, lo que ocurra primero*/
 function addDirection(direction) {
+    boton = direction;
     if (directions.length < maxOrdenes) {
         directions.push(direction);
         showDirection(direction);
         document.getElementById("mensaje").innerHTML = direction;
+        consultaGET(direction);
     }
     else {
         document.getElementById("mensaje").innerHTML = "Llegué a mi máximo de 10 órdenes acumuladas";
@@ -57,7 +61,8 @@ function clearSquares() {
 }
 
 /*esta función se ejecuta a partir de presionar el boton ¡Vamos!*/
-function go() {   
+function go() {  
+    consultaGET("ejecutar"); 
     if (directions.length === 0 || start === false) {
         start = false;
         document.getElementById("mensaje").innerHTML = "Presionar el botón de inicio";
@@ -96,3 +101,15 @@ toggleBtn.addEventListener('change', function() {
         header.style.backgroundColor = '#00ffa5';
     }
 });
+
+function consultaGET(consulta) {
+    const Http = new XMLHttpRequest();
+    console.log(`consulta ${consulta}`);
+    Http.open("GET", consulta);
+    Http.send();
+
+    Http.onreadystatechange = (e) => {
+        console.log(Http.status);
+        console.log(Http.response);
+    }
+}
