@@ -110,6 +110,6 @@ function consultaGET(consulta) {
 
     Http.onreadystatechange = (e) => {
         console.log(Http.status);
-        console.log(Http.response);
+        console.log(Http.responseText);
     }
 }
