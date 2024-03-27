@@ -21,7 +21,7 @@ function inicio() {
     cuadradoActual = 1;
     document.getElementById("mensaje").innerHTML = "Preparado para recibir órdenes";
     habilitarBotonera(true);
-    consultaGET("inicio"); //este evento lo que hace es consultar a url x un evento
+    consultaGET("Inicio"); //este evento lo que hace es consultar a la url "x" por el value pasado por parámetro
 }
 
 /*esta función es la encargada de leer las direcciones escritas en el html y sumarlas 
@@ -32,7 +32,7 @@ function addDirection(direction) {
         directions.push(direction);
         showDirection(direction);
         document.getElementById("mensaje").innerHTML = direction;
-        consultaGET(direction);
+        consultaGET(direction);//se va a consultar cada vez que se presione un boton direccional y este va a informar que dirección se presiono
     }
     else {
         document.getElementById("mensaje").innerHTML = "Llegué a mi máximo de 10 órdenes acumuladas";
@@ -62,7 +62,7 @@ function clearSquares() {
 
 /*esta función se ejecuta a partir de presionar el boton ¡Vamos!*/
 function go() {  
-    consultaGET("ejecutar"); 
+    consultaGET("Ejecutar"); 
     if (directions.length === 0 || start === false) {
         start = false;
         document.getElementById("mensaje").innerHTML = "Presionar el botón de inicio";
@@ -102,6 +102,7 @@ toggleBtn.addEventListener('change', function() {
     }
 });
 
+//Esta función se encarga de manejar las consultas GET del cliente y de mantener la comunicación con el ESP32
 function consultaGET(consulta) {
     const Http = new XMLHttpRequest();
     console.log(`consulta ${consulta}`);
